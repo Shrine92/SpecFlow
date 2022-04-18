@@ -30,12 +30,14 @@ Examples:
 | 0      | 100             |
 | 40     | 60              |
 
+@elf
 Scenario: Elf race character get a 10 damage resistance
 	And I have a damage resistance of 10
 	And I'm an Elf
 When I take 50 damage
 Then My health should be 80
 
+@elf
 Scenario: Elf race character get a 10 damage resistance using data table
 	And I have the following attributes
 	| attribute        | value |
@@ -72,6 +74,7 @@ Given I have the following weapons
 | Knife | 10    |
 Then my weapons should be worth 100
 
+@elf
 Scenario: Elf race characters don't lose magical item power
 Given I'm an Elf
 	And I have an Amulet with a power of 200

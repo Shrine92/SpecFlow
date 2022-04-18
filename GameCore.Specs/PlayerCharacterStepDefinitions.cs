@@ -19,7 +19,17 @@ namespace GameCore.Specs
         }
 
         [When(@"I take (.*) damage")]
+        // [Scope(Scenario = "Health reduction")] // OR
+        // [Scope(Tag = "elf")]
         public void WhenITake_number_damage(int number)
+        {
+            _context.Player.Hit(number);
+        }
+
+        [When(@"I take (.*) damage")]
+        [Scope(Tag = "elf",
+            Feature = "PlayerCharacter")] // AND
+        public void WhenITakeDamageAsAnElf(int number)
         {
             _context.Player.Hit(number);
         }
